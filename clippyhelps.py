@@ -1,8 +1,5 @@
 from ollama import chat
 from ollama import ChatResponse
-from PIL import Image
-img = Image.open("/Users/matthew/Downloads/ClippyFace.jpg")
-img.show()
 print("Enter your text for Clippy to help you:")
 x = input()
 response: ChatResponse = chat(model='llama3.2', messages=[
