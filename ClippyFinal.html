@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  max-width: 500px;
+  margin: auto;
+  background: #f4f0e8}
+</style>
+<header>
+
+  <script defer="" src="https://pyscript.net/latest/pyscript.js"></script>
+  
+</header>
+<!--<script scr="textstream.tsx:""></script>-->
+
+
+<body>
+<h1>Hi I'm clippy</h1>
+<img src="ClippyFace.jpg">
+
+
+<div class="reply">
+<py-script>
+  from ollama import chat
+  from ollama import ChatResponse
+
+  response: ChatResponse = chat(model='llama3.2', messages=[
+    {
+      'role': 'user',
+      'content': 'Why is the sky blue?',
+    },
+  ])
+  print(response['message']['content'])
+  # or access fields directly from the response object
+  print(response.message.content)
+</py-script>
+</div>
+
+<textarea id="consoul" name="clippy" rows="4" cols="50">
+you can put all you wish to say to clippy here
+</textarea>
+<p></p>
+
+<input type="submit" value="Submit to Clippy">
+
+
+</body>
+</html>
